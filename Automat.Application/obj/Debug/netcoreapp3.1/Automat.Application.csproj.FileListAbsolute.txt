@@ -1,0 +1,9 @@
+C:\Projects\Ode.Al\Automat.Application\bin\Debug\netcoreapp3.1\Automat.Application.deps.json
+C:\Projects\Ode.Al\Automat.Application\bin\Debug\netcoreapp3.1\Automat.Application.dll
+C:\Projects\Ode.Al\Automat.Application\bin\Debug\netcoreapp3.1\Automat.Application.pdb
+C:\Projects\Ode.Al\Automat.Application\obj\Debug\netcoreapp3.1\Automat.Application.csprojAssemblyReference.cache
+C:\Projects\Ode.Al\Automat.Application\obj\Debug\netcoreapp3.1\Automat.Application.AssemblyInfoInputs.cache
+C:\Projects\Ode.Al\Automat.Application\obj\Debug\netcoreapp3.1\Automat.Application.AssemblyInfo.cs
+C:\Projects\Ode.Al\Automat.Application\obj\Debug\netcoreapp3.1\Automat.Application.csproj.CoreCompileInputs.cache
+C:\Projects\Ode.Al\Automat.Application\obj\Debug\netcoreapp3.1\Automat.Application.dll
+C:\Projects\Ode.Al\Automat.Application\obj\Debug\netcoreapp3.1\Automat.Application.pdb

@@ -1,0 +1,15 @@
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.csprojAssemblyReference.cache
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.AssemblyInfoInputs.cache
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.AssemblyInfo.cs
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Infrastructure.deps.json
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Infrastructure.runtimeconfig.json
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Infrastructure.runtimeconfig.dev.json
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Infrastructure.dll
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Infrastructure.pdb
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Application.dll
+C:\Projects\Ode.Al\Automat.Infrastructure\bin\Debug\netcoreapp3.1\Automat.Application.pdb
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.csproj.CopyComplete
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.dll
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.pdb
+C:\Projects\Ode.Al\Automat.Infrastructure\obj\Debug\netcoreapp3.1\Automat.Infrastructure.genruntimeconfig.cache
