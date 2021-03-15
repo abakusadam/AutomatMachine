@@ -94,7 +94,7 @@ namespace Automat.Application.Port
                 {
                     transactionResult.TransactionId = paymentEntity.TransactionId;
                     transactionResult.Code = 1;
-                    transactionResult.Message = "Lütfen para giriniz!";
+                    transactionResult.Message = "Lütfen yeterli para giriniz!";
                     return transactionResult;
                 }
 
@@ -142,12 +142,14 @@ namespace Automat.Application.Port
                     return transactionResult;
                 }
 
-                if(string.IsNullOrEmpty(paymentEntity.Pan) || paymentEntity.Year == 0 || 
+                //In this line can be used luhn check algorithm for the credit card info!!!!
+                if (string.IsNullOrEmpty(paymentEntity.Pan) || paymentEntity.Year == 0 || 
                     paymentEntity.Month == 0 || string.IsNullOrEmpty(paymentEntity.Cvc))
                 {
                     transactionResult.TransactionId = paymentEntity.TransactionId;
                     transactionResult.Code = 1;
                     transactionResult.Message = $"CardInfo: {paymentEntity.TransactionId} Message: Kredi kartı bilgileri bulunamadı!";
+                    return transactionResult;
                 }
 
                 var transaction = await _transactionRepository.GetByIdAsync(paymentEntity.TransactionId);
@@ -181,6 +183,9 @@ namespace Automat.Application.Port
                     return transactionResult;
                 }
 
+                //charge from the credit card in this line  
+                //if this process success 
+
                 transactionResult.TransactionId = paymentEntity.TransactionId;
                 transactionResult.Code = 0;
                 transactionResult.Message = "Başarılı işlem";
@@ -188,18 +193,15 @@ namespace Automat.Application.Port
                 transactionResult.ReversedAmount = 0;
                 transactionResult.Slot = transaction.Slot;
 
-                //charge from the credit card in this line  
-                //if this process success 
-
                 product.NumberOfProducts -= transaction.SelectedPieces;
                 product.IsAvailable = product.NumberOfProducts <= 0 ? false : true;
+
                 await _productRepository.UpdateAsync(product);
 
                 transaction.IsPaid = true;
                 await _transactionRepository.UpdateAsync(transaction);
 
                 return transactionResult;
-
             }
             catch (Exception)
             {

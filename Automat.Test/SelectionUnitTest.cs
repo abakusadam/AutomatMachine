@@ -24,13 +24,11 @@ namespace Automat.Test
             var result =  await automatFacade.Selection(null);
 
             //Assert
-            Assert.Equal(1, result.Code);
-           
+            Assert.Equal(1, result.Code);     
         }
 
-
         [Fact]
-        public async Task Should_Return_Error_When_There_Is_No_Product()
+        public async Task Should_Return_Error_When_Send_Non_Product()
         {
             //Arrange
             var automatFacade = new AutomatFacade(new FakeProductRepository(), new FakeCampaingRepository(), new FakeTransactionRepository());
@@ -46,10 +44,7 @@ namespace Automat.Test
 
             //Assert
             Assert.Equal(1, result.Code);
-
         }
-
-
 
         [Fact]
         public async Task Should_Return_Error_When_SelectedPieces_Bigger_Than_NumberOfProducts()
@@ -85,6 +80,5 @@ namespace Automat.Test
             Assert.Equal(0, result.Code);
             Assert.Equal((decimal)4.950, result.TotalAmount);
         }
-
     }
 }

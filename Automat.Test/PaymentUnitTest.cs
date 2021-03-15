@@ -22,7 +22,6 @@ namespace Automat.Test
 
             //Assert
             Assert.Equal(1, result.Code);
-
         }
 
         [Fact]
@@ -41,7 +40,6 @@ namespace Automat.Test
 
             //Assert
             Assert.Equal(1, result.Code);
-
         }
 
         [Fact]
@@ -72,9 +70,7 @@ namespace Automat.Test
 
             //Assert
             Assert.Equal(1, result.Code);
-
         }
-
 
         [Fact]
         public async Task Should_Return_Error_When_Sending_Wrong_Card_Info_For_PaymentByCreditCard()

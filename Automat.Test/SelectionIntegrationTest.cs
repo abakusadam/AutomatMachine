@@ -27,71 +27,59 @@ namespace Automat.Test
         [Fact]
         public async Task Should_Return_Success_When_Correct_Request()
         {
-
-                var parameter = new ProductSelection();
-                parameter.Slot = 2;
-                parameter.SugarLevel = 0;
-                parameter.SelectedPieces = 1;
+            var parameter = new ProductSelection();
+            parameter.Slot = 2;
+            parameter.SugarLevel = 0;
+            parameter.SelectedPieces = 1;
                 
+            var response = await _client.PostAsJsonAsync("Automat/ProductSelection", parameter);
+            var apiResult = await response.Content.ReadAsAsync<ProductSelectionResult>();
 
-                var response = await _client.PostAsJsonAsync("Automat/ProductSelection", parameter);
-
-                var apiResult = await response.Content.ReadAsAsync<ProductSelectionResult>();
-
-                Assert.True(0 == apiResult.Code);
-            
+            Assert.True(0 == apiResult.Code);         
         }
 
         [Fact]
         public async Task Should_Return_Error_When_Null_Request()
         {
-
             var parameter = new ProductSelection();
      
             var response = await _client.PostAsJsonAsync("Automat/ProductSelection", parameter);
-
             var apiResult = await response.Content.ReadAsAsync<ProductSelectionResult>();
 
             Assert.True(1 == apiResult.Code);
-
+            Assert.Equal("null parameter", apiResult.Message);
         }
 
 
         [Fact]
-        public async Task Should_Return_Error_When_There_Is_No_Product()
+        public async Task Should_Return_Error_When_Send_Non_Product()
         {
 
             var parameter = new ProductSelection();
-            parameter.Slot = 99;
+            parameter.Slot = 999;
             parameter.SugarLevel = 0;
             parameter.SelectedPieces = 100;
 
             var response = await _client.PostAsJsonAsync("Automat/ProductSelection", parameter);
-
             var apiResult = await response.Content.ReadAsAsync<ProductSelectionResult>();
 
             Assert.True(1 == apiResult.Code);
-
+            Assert.Equal($"Slot: {parameter.Slot} Message: Slot bulunamadı!", apiResult.Message);
         }
 
 
         [Fact]
         public async Task Should_Return_Error_When_SelectedPieces_Bigger_Than_NumberOfProducts()
         {
-
             var parameter = new ProductSelection();
             parameter.Slot = 99;
             parameter.SugarLevel = 0;
             parameter.SelectedPieces = 100;
 
-
             var response = await _client.PostAsJsonAsync("Automat/ProductSelection", parameter);
-
             var apiResult = await response.Content.ReadAsAsync<ProductSelectionResult>();
-            //Assert
+
             Assert.True(1 == apiResult.Code);
         }
-
-
     }
 }

@@ -35,7 +35,7 @@ namespace Automat.API
         {
             services.AddControllers();
             services.AddDbContext<AutomatDbContext>(c =>
-              c.UseSqlServer(GetConnectionString("CustomerConnection")), ServiceLifetime.Singleton);
+              c.UseSqlServer(GetConnectionString("AutomatConnection")), ServiceLifetime.Singleton);
 
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICampaingRepository, CampaingRepository>();
