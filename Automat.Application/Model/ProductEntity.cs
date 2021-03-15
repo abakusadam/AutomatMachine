@@ -7,7 +7,6 @@ namespace Automat.Application.Model
 {
     public class ProductEntity : Entity
     {
-        //public int ProductId { get; set; }
         public int Slot { get; set; }
         public int ProductTypeId { get; set; }
         public string ProductName { get; set; }

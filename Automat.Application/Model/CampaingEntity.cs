@@ -7,10 +7,9 @@ namespace Automat.Application.Model
 {
     public class CampaingEntity: Entity
     {
-        //public int CampaignId { get; set; }
         public int Slot { get; set; }
         public string CampaignDesc { get; set; }
-        public float DiscountRatio { get; set; }
+        public decimal DiscountRatio { get; set; }
         public CampaingEntity()
         {
             Slot = 0;

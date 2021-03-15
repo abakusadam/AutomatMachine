@@ -280,7 +280,7 @@ namespace Automat.Application.Port
                     var campaing = campaings.Where(a => a.Slot == productSelection.Slot).FirstOrDefault();
                     if(campaing != null)
                     {
-                        totalAmount += totalAmount * (decimal) campaing.DiscountRatio;
+                        totalAmount += totalAmount *  campaing.DiscountRatio;
                     }
                 }
 
