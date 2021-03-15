@@ -105,6 +105,7 @@ namespace Automat.Application.Port
                 transactionResult.Message = "Başarılı işlem";
                 transactionResult.PaymentMethod = "NAKIT";
                 transactionResult.ReversedAmount = reversedAmount;
+                transactionResult.ProdcutName = product.ProductName;
                 transactionResult.Slot = transaction.Slot;
 
 
@@ -191,6 +192,7 @@ namespace Automat.Application.Port
                 transactionResult.Message = "Başarılı işlem";
                 transactionResult.PaymentMethod = "KREDI KART";
                 transactionResult.ReversedAmount = 0;
+                transactionResult.ProdcutName = product.ProductName;
                 transactionResult.Slot = transaction.Slot;
 
                 product.NumberOfProducts -= transaction.SelectedPieces;
