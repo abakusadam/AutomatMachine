@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "goBLGaJLSLbfeazZI5CyEWFL4CbRv9tPjaSyMJoeCOTD3yh2B5Z65Jneiqzkg9rFE7IaKDv5VIGWIy+jPA8Nvg==",
+  "dgSpecHash": "Fb0pNyPvrmvw3GapLLzi0/ZG5dJMdj/W9IQRvQEXCO3f1Z+wCQv6oWxsuKqndZubARTwOjmhrD0FwiLKjVwl/g==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Ode.Al\\Automat.API\\Automat.API.csproj",
+  "projectFilePath": "C:\\Projects\\AutomatMachine\\Automat.API\\Automat.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ozdem\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ozdem\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

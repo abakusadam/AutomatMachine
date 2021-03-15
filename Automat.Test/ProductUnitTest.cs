@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Automat.Test
 {
-    public class ProductTest
+    public class ProductUnitTest
     {
         [Fact]
         public async Task Should_Return_Success_When_Request_To_ProductGetAll()

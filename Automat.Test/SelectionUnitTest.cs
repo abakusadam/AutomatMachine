@@ -12,7 +12,7 @@ using Xunit;
 
 namespace Automat.Test
 {
-    public class SelectionTest
+    public class SelectionUnitTest
     {
         [Fact]
         public async Task Should_Return_Error_When_Null_Request()

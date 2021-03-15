@@ -13,7 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Automat.API
@@ -25,7 +27,7 @@ namespace Automat.API
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -33,7 +35,7 @@ namespace Automat.API
         {
             services.AddControllers();
             services.AddDbContext<AutomatDbContext>(c =>
-              c.UseSqlServer(Configuration.GetConnectionString("CustomerConnection")), ServiceLifetime.Singleton);
+              c.UseSqlServer(GetConnectionString("CustomerConnection")), ServiceLifetime.Singleton);
 
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICampaingRepository, CampaingRepository>();
@@ -72,6 +74,22 @@ namespace Automat.API
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Automat API V1");
             });
+        }
+
+
+        private string GetConnectionString(string key)
+        {
+            if (Configuration == null || Configuration[key] == null)
+            {
+                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+                var builder = new ConfigurationBuilder()
+                    .SetBasePath(path)
+                    .AddJsonFile("appsettings.json", true, true);
+                Configuration = builder.Build();
+            }
+
+            return Configuration.GetConnectionString(key);
         }
     }
 }

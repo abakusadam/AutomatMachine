@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Automat.Test
 {
-    public class PaymentTest
+    public class PaymentUnitTest
     {
         [Fact]
         public async Task Should_Return_Error_When_Null_Request_For_PaymentByCash()
