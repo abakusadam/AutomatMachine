@@ -52,6 +52,7 @@ namespace Automat.API
         [ProducesResponseType(typeof(IEnumerable<TransactionResult>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<TransactionResult>>> PaymentByCash([FromBody] PaymentByCashEntity paymentByCashCardEntity)
         {
+
             var result = await _automatFacade.PaymentByCash(paymentByCashCardEntity);
             return Ok(result);
         }

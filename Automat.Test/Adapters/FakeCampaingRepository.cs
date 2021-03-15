@@ -27,7 +27,7 @@ namespace Automat.Test.Adapters
             CampaingEntity entity = new CampaingEntity();
             entity.Id = 1;
             entity.Slot = 1;
-            entity.DiscountRatio = -0.01F;
+            entity.DiscountRatio = (decimal) -0.01;
             entity.CampaignDesc = "deneme";
 
             List<CampaingEntity> campaingEntities = new List<CampaingEntity>();
